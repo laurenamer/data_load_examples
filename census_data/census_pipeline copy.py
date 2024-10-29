@@ -43,6 +43,7 @@ def load_stuff() -> None:
     )
 
     census_source = rest_api_source({
+        
         "client": {
             "base_url": "https://api.census.gov/data/2020/dec/sdhc",
             "auth": {

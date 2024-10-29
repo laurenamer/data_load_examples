@@ -1,12 +1,12 @@
 import dlt
-from dlt.sources.rest_api import rest_api_source
+
+data = [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]
 
 pipeline = dlt.pipeline(
-    pipeline_name='census',
-    destination="bigquery", 
-    dataset_name="census_data"
+        pipeline_name='quickstart',
+        destination='bigquery',
+        dataset_name='census_data',
 )
+load_info = pipeline.run(data, table_name="users")
 
-info = pipeline.run([{'id':1}, {'id':2}, {'id':3}], table_name="three")
-
-print(info)
+print(load_info)
